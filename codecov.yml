@@ -9,6 +9,11 @@ coverage:
         target: 100%
         threshold: 0%
 
+ignore:
+  - "**/*.pb.go"
+  - "**/mock/*.go"
+  - "**/*_mock.go"
+
 comment:
   layout: "reach, diff, flags, files"
   behavior: default
