@@ -10,6 +10,9 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
+func IsValidNonce(nonce uint64) bool {
+    return nonce > 0
+}
 func TestWrapError(t *testing.T) {
 	t.Parallel()
 
