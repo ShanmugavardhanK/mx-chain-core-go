@@ -1,9 +1,9 @@
+
 package marshal
 
 import (
 	"bytes"
 	"encoding/json"
-	"errors"
 )
 
 // TxJsonMarshalizer represents a custom marshalizer for transactions which does not escape HTML characters in strings
@@ -12,10 +12,6 @@ type TxJsonMarshalizer struct {
 
 // Marshal tries to serialize the obj parameter
 func (t *TxJsonMarshalizer) Marshal(obj interface{}) ([]byte, error) {
-	if obj == nil {
-		return nil, errors.New("nil object to serialize from")
-	}
-
 	bytesBuffer := new(bytes.Buffer)
 	jsonEncoder := json.NewEncoder(bytesBuffer)
 	jsonEncoder.SetEscapeHTML(false)
